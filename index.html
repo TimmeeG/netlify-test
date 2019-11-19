@@ -5,26 +5,16 @@
     <script type="text/javascript">
       var ticketsLeft = 100;
       var qty = document.getElementById('qty');
-      var remaining = document.getElementById('remaining');
-
-      remaining.innerHTML = ticketsLeft;
 
       function modify_qty() {
-        var new_qty = ticketsLeft - parseInt(qty.value, 10);
-        if (new_qty < 0) {
-          ticketsLeft = 0;
-          remaining.innerHTML = 0;
-          alert('Sorry Tickets Have Now Sold Out');
-          return;
-        }
-        ticketsLeft = new_qty;
-        remaining.innerHTML = new_qty;
-        return new_qty;
+        ticketsLeft = ticketsLeft - 1;
+        document.getElementById('num').innerHTML = ticketsLeft;
       }
     </script>
   </head>
   <h1>
     hello world
   </h1>
+  <p id="num"></p>
   <input type="button" value="count" id="button" onclick="modify_qty();" />
 </html>
